@@ -13,7 +13,9 @@
 #include "HGL/include/VertexBufferLayout.hpp"
 #include "HGL/include/VertexArray.hpp"
 
-#include <glm/vec4.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 glm::vec4 vertices[] = 
 {
@@ -54,10 +56,6 @@ int main(void)
 
     shader.Bind();
 
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, (const void* )0);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, (const void*) (sizeof(float) * 2));
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
     HGL::Texture2D tex("brick.jpg");
     tex.Bind(0);
     shader.SetUniform<int>(std::string_view("u_TexSlot"), 0);

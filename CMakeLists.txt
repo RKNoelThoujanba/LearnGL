@@ -6,7 +6,7 @@ file(GLOB HGL_SRC_FILES "HGL/*.cpp")
 file(GLOB HGL_HEADER_FILES "HGL/include/*.hpp")
 
 add_executable(LearnGL 
-    vendor/glad/src/gl.c vendor/glad/include/glad/gl.h vendor/stb/stb_image.c
+    vendor/glad/src/gl.c vendor/glad/include/glad/gl.h
     ${HGL_HEADER_FILES}
     ${HGL_SRC_FILES}
 
@@ -21,9 +21,7 @@ target_link_libraries(LearnGL glfw)
 add_subdirectory(vendor/glad)
 target_link_libraries(LearnGL glad)
 
-add_subdirectory(vendor/glm/glm)
-target_link_libraries(LearnGL glm)
-
+target_include_directories(LearnGL PRIVATE vendor/glm)
 target_include_directories(LearnGL PRIVATE vendor/glad/include)
 target_include_directories(LearnGL PRIVATE vendor/stb)
 

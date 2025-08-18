@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core.hpp"
-#include <stb_image.h>
 #include <filesystem>
 #include <exception>
 #include <string>

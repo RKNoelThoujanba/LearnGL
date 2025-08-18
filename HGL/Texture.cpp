@@ -1,6 +1,9 @@
 #include "include/Texture.hpp"
 #include <memory>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+
 namespace HGL
 {
     Texture2D::Texture2D()
