@@ -44,8 +44,14 @@ namespace HGL
         const void* offset = 0;
         for(const auto& vbe : vbl.GetVertexLayout())
         {
-            glVertexAttribPointer(m_enbaleIndicesCount++, vbe.Count, (GLenum) vbe.Type, vbe.Type == VBLDataTypes::F32 || vbe.Type == VBLDataTypes::F64 ? GL_FALSE : GL_TRUE, vbl.GetStride(), offset);
-            offset = reinterpret_cast<const void*>(reinterpret_cast<size_t>(offset) + vbe.Count * GetVBLTypeSize(vbe.Type));
+            GLsizei stride = vbl.GetStride();
+            GLsizei offsetInc = vbe.Count * GetVBLTypeSize(vbe.Type);
+            glEnableVertexAttribArray(m_enbaleIndicesCount);
+            glVertexAttribPointer(m_enbaleIndicesCount, vbe.Count, (GLenum) vbe.Type, vbe.Type == VBLDataTypes::F32 || vbe.Type == VBLDataTypes::F64 ? GL_FALSE : GL_TRUE, stride, offset);
+            
+            offset = reinterpret_cast<const void*>(reinterpret_cast<size_t>(offset) + offsetInc);
+
+            ++m_enbaleIndicesCount;
         }
     }
 }
