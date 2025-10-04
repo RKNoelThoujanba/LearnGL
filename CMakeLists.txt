@@ -34,7 +34,7 @@ if(MSVC)
     string(REGEX REPLACE "/W[1-3]" "/W4" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
     target_compile_options(LearnGL  PRIVATE /WX /permissive-)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /std:c11")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++23preview")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++latest")
 
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 
