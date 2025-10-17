@@ -28,8 +28,8 @@ uint32_t indices[] = {0, 1, 3, 1, 2, 3};
 int main(void)
 {
     HGL::WindowProperties windowProperties;
-    windowProperties.Width = 800;
-    windowProperties.Height = 800;
+    windowProperties.Width = 400;
+    windowProperties.Height = 400;
     HGL::WindowError err;
     HGL::Window window(windowProperties, err);
     if(err != HGL::WindowError::NONE)
