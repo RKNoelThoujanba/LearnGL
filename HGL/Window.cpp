@@ -116,6 +116,12 @@ namespace HGL
             return;
         }
 
+        int fbWidth, fbHeight;
+        glfwGetFramebufferSize(m_window, &fbWidth, &fbHeight);
+        m_windowProperties.Width = fbWidth;
+        m_windowProperties.Height = fbHeight;
+        glViewport(0, 0, fbWidth, fbHeight);
+
         glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow*, int width, int height)
         {
             glViewport(0, 0, width, height);
