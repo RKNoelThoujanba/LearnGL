@@ -71,7 +71,7 @@ int main(void)
     {
         double begin = glfwGetTime();
 
-        transform = glm::rotate(transform, glm::radians(30.0f * delta), glm::vec3(0.0, 0.1, 0.0));
+        transform = glm::rotate(transform, glm::radians(30.0f * delta), glm::vec3(1.0, 0.1, 1.0));
         shader.SetUniformMat<float, 4>(std::string_view("u_Transform"), glm::value_ptr(transform), 1, false);
 
         glClear(GL_COLOR_BUFFER_BIT);
