@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.30)
 
 project(LearnGL)
 
@@ -13,7 +13,7 @@ add_executable(LearnGL
     main.cpp
 )
 
-
+set(GLFW_BUILD_X11 0)
 
 add_subdirectory(vendor/glfw)
 target_link_libraries(LearnGL glfw)
